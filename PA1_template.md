@@ -81,6 +81,7 @@ head(df_Activity_Sum_Steps_By_Date, 20L)
 hist(x = df_Activity_Sum_Steps_By_Date$Total_Steps_Per_Day,
      main = 'Histogram of the total number of steps taken each day',
      xlab = 'Total Steps',
+     breaks = 50,
      col = 'Pink')
 ```
 
@@ -221,7 +222,7 @@ cat('Total number of rows with NAs =', Total_NA_Rows)
 
 **Strategy employed to fill in NA values:-**
 
-> Use the Average number of steps for all intervals within a day.
+> Use the Average number of steps for **all** intervals within a day.
 
 **Formula**
 
@@ -342,6 +343,7 @@ head(df_Activity_Sum_Steps_By_Date_2, 20L)
 hist(x = df_Activity_Sum_Steps_By_Date_2$Total_Steps_Per_Day,
      main = 'Histogram of the total number of steps taken each day',
      xlab = 'Total Steps',
+     breaks = 50,
      col = 'Cyan')
 ```
 
@@ -370,20 +372,20 @@ cat('For total number of steps taken each day (after NA filled):-',
 <font color = 'Purple'>
 Q: Do these values differ from the estimates from the first part of the assignment?
 </font>
-
+  
 <font color = 'Red'>
-A: Yes. The Median total number of steps per day has increased slightly from **10,765** to **10,766.19**.
+A: Yes. The Median of the total number of steps per day has increased from **10,765** to **10,766.19**.
 </font>
-
+  
 <font color = 'Purple'>
 Q: What is the impact of imputing missing data on the estimates of the total daily number of steps?
 </font>
-
+  
 <font color = 'Red'>
-A: It causes the frequency of steps between the range of **10000 to 15000** to increase.
+A: It causes the frequency of steps at the Median **(10,766.19)** to increase.
 </font>
 </p>
-
+  
 ## Are there differences in activity patterns between weekdays and weekends?
 
 For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
@@ -481,19 +483,19 @@ xyplot(steps ~ interval | daytype,
 <font color = 'Purple'>
 Q: Are there differences in activity patterns between weekdays and weekends?
 </font>
-
+  
 <font color = 'Red'>
 A: Yes.
 </font>
-
+  
 For <font color = 'Green'><b>weekends</b></font> - the activity starts later at around interval <font color = 'Red'>**700**</font> and <font color = 'Red'>**peaks twice**</font> around intervals <font color = 'Red'>**800 and 900**</font>.<br>
 Then it flutuates between intervals <font color = 'Red'>**1000 and 2000**</font> but at higher level than weekdays.<br>
 At an interval later than <font color = 'Red'>**2000**</font> the activity decreases.
-
+  
 For <font color = 'Blue'><b>weekdays</b></font> - the activity starts earlier at interval <font color = 'Red'>**500**</font> and <font color = 'Red'>**peaks once**</font> around intervals <font color = 'Red'>**800 and 900**</font>.<br>
 Then it fluctuates between intervals <font color = 'Red'>**1000 and 2000**</font> but at a lower level than weekends.<br>
 At interval <font color = 'Red'>**2000**</font> onwards the activity decreases.
 <br><br>
 </p>
-
+  
 **~ END ~**
